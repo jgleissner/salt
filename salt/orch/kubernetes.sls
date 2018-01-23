@@ -134,7 +134,7 @@ kube_master_setup:
     - tgt: 'roles:kube-master'
     - tgt_type: grain
     - highstate: True
-    - batch: 5
+    - batch: 1
     - require:
       - salt: admin_setup
       - salt: generate_sa_key
@@ -145,7 +145,7 @@ kube_minion_setup:
     - tgt: 'roles:kube-minion'
     - tgt_type: grain
     - highstate: True
-    - batch: 5
+    - batch: 1
     - require:
       - salt: flannel_setup
       - salt: kube_master_setup
